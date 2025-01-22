@@ -70,3 +70,7 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 Ахуеть, заебись ты красава! Теперь возвращайся в amneziawg-linux-kernel-module/src, где ты пиздато вбиваешь команду "ln -s /home/user/Downloads/6.12.10-zen1-1-zen kernel"
 
 Ну все, теперь ты можешь ебашить make и  sudo make install, а после пользоваться amneziawg как нормальный человек 
+
+# Примечание номер 5:
+
+https://www.youtube.com/watch?v=0LEc7es4_rE
