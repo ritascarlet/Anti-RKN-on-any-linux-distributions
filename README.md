@@ -65,7 +65,7 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 
 Готово! Теперь осталось лишь создать путь /etc/amnezia/amneziawg, а после копировать туда WARP (ну и само собой sudo awg-quick up WARP)
 
-# Примечание номер 4:
+# Примечание номер 4: Любой другой дистрибутив (Arch linux, Void linux и тд)
 
 Это примечание создано для всех дистрибутивов linux, так что оно будет основным 
 (Примечание проверенно лично мною на таких дистрибутивах как arch, void, artix, devuan) 
