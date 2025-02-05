@@ -114,20 +114,19 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 
 Я настоятельно рекомендую использовать dkms сборку, так как после обновления ядра вам не придется пересобирать модуль вручную
 
-    ```shell
+```shell
     sudo make dkms-install
     sudo dkms add -m amneziawg -v 1.0.0
     sudo dkms build -m amneziawg -v 1.0.0
     sudo dkms install -m amneziawg -v 1.0.0
-    ```
+```
 
 4) Готово! Теперь можете создавать warp.conf и копировать его в директорию /etc/amnezia/amneziawg
 
-Для использования 
-    ```shell
-    sudo awg-quick up WARP (для включения сервиса, где WARP это WARP.conf)
-    sudo awg-quick down WARP (для выключения сервиса) 
-    ```
+Для использования сервиса:
+#    sudo awg-quick up WARP (для включения сервиса, где WARP это WARP.conf)
+
+#    sudo awg-quick down WARP (для выключения сервиса) 
 
 
 # Примечание номер 5:
