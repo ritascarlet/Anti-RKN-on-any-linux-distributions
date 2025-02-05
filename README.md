@@ -24,7 +24,8 @@ Amneziawg это форк WireGuard, использующий тунельное
 # Примечание номер 1: Ubuntu, Debian (моя любимка) и остальные debian-based дистрибутивы
 Не мучайте себя, просто зайдите на https://github.com/amnezia-vpn/amnezia-client 
 
-В релизах вам будет доступен бинарный установщик с графическим интерфейсом, который нужно запустить с правами суперюзера. 
+В релизах вам будет доступен бинарный установщик с графическим интерфейсом, который нужно запустить с правами суперюзера, а после 
+выполнить установку по принципу далее, далее, далее
 
 # Примечание номер 2: Fedora, RedHat, CentOs и другие rpm-based дистрибутивы
 
@@ -48,13 +49,13 @@ sudo dnf install amneziawg-dkms amneziawg-tools
 
  ```shell
  environment.systemPackages = with pkgs; [
-    linuxKernel.packages.linux_zen.amneziawg
-    amneziawg-go
-  	 amneziawg-tools
+   linuxKernel.packages.linux_zen.amneziawg
+   amneziawg-go
+   amneziawg-tools
   ];
  ```
 
-Затем в конфигурации добавляем эту богостроку 
+Затем в конфигурации добавляем эту строку
 
  ```shell
 boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ; 
@@ -62,7 +63,7 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 
 (Более подробно можете рассмотреть в моей конфигурации NixOs, которая есть в профиле)
 
-Готово! Теперь осталось лишь создать путь /etc/amnezia/amneziawg, а после вкинуть туда WARP (ну и само собой sudo awg-quick up WARP)
+Готово! Теперь осталось лишь создать путь /etc/amnezia/amneziawg, а после копировать туда WARP (ну и само собой sudo awg-quick up WARP)
 
 # Примечание номер 4:
 
@@ -70,11 +71,12 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 (Примечание проверенно лично мною на таких дистрибутивах как arch, void, artix, devuan) 
 
 Основа заключается в собрке модуля ядра по этой ссылке (https://github.com/amnezia-vpn/amneziawg-linux-kernel-module) 
+
 Так же не забудь собрать amneziawg-tools по этой ссылке (https://github.com/amnezia-vpn/amneziawg-tools) 
 
 Основные шаги: 
 
-1) Клонируете и заходите в директорию src 
+1) Клонируете amneziawg-linux-kernel-module и заходите в директорию src 
 
 ```shell
     git clone https://github.com/amnezia-vpn/amneziawg-linux-kernel-module.git
@@ -87,10 +89,15 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
    uname -a
 ```
 Кстати как мы знаем, бывает много сборок основного ядра linux, а именно zen, xanmod, ltsc и другие.
+
 Поэтому я сделаю обьяснение на своем примере, а именно arch linux с ядром linux-zen 6.13.1.zen1-1 (кстати версию и сборку своего ядра я получил командой uname -a)
-Понимаю что поскольку данное ядро находится по стандарту в репозитроии arch, иду туда и после нахожу данную стрницу https://archlinux.org/packages/extra/x86_64/linux-zen/
+
+Понимаю, что поскольку данное ядро находится по стандарту в репозитроии arch, иду туда и после нахожу данную стрницу https://archlinux.org/packages/extra/x86_64/linux-zen/
+
 Вижу ссылку на git репозитроий (https://github.com/zen-kernel/zen-kernel), захожу в releases и скачиваю исходный код своего ядра в tar.gz формате
+
 После распаковываю исходный код своего ядра командой tar -xf. 
+
 Отлично, осталось только сделать симлинк к архиву amneziawg-linux-kernel-module/src
 Для этого находясь по пути amneziawg-linux-kernel-module/src, мы вбиваем комнду 
 ```shell
