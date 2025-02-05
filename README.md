@@ -121,15 +121,16 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
     sudo dkms install -m amneziawg -v 1.0.0
 ```
 
-4) Готово! Теперь можете создавать warp.conf и копировать его в директорию /etc/amnezia/amneziawg
+4) Готово! Теперь можете создавать warp.conf и копировать его в директорию /etc/amnezia/amneziawg/
+
 
 Для использования сервиса:
-#    sudo awg-quick up WARP (для включения сервиса, где WARP это WARP.conf)
 
-#    sudo awg-quick down WARP (для выключения сервиса) 
+    sudo awg-quick up WARP (для включения сервиса, где WARP это WARP.conf)
+    sudo awg-quick down WARP (для выключения сервиса) 
 
 
 # Примечание номер 5:
 
-
+https://youtu.be/8CwB4T1nkaM?t=2657
 
