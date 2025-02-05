@@ -132,5 +132,5 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 
 # Примечание номер 5:
 
-https://youtu.be/8CwB4T1nkaM?t=2657
+https://youtu.be/8CwB4T1nkaM?t=2659
 
