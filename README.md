@@ -11,13 +11,14 @@
 Абсолютно для всех пользователей понадобится WARP.conf, который мы получаем по гайду из этот git репозитория (https://github.com/ImMALWARE/bash-warp-generator) 
 
 !Важно помнить! 
-Ваш WARP.conf всегда находится в /etc/amnezia/amneziawg/WARP.cong и нигде больше. Именно по этому пути amneziawg его ищет! 
+Ваш WARP.conf всегда находится в /etc/amnezia/amneziawg/WARP.conf и нигде больше. Именно по этому пути amneziawg его ищет! 
 
-Оприора названий 
-amneziawg - модуль ядра 
-amneziawg-tools - средства, необходимные для работы amneziawg
+Оприора названий:
+# amneziawg - модуль ядра 
 
-Amneziawg это форк WireGuard, использующий тунельное разеделение трафика, так что РКН вряд-ли сможет это обойти 
+# amneziawg-tools - средства, необходимные для работы amneziawg
+
+Amneziawg это форк WireGuard, использующий тунельное разделение трафика, так что РКН вряд-ли сможет это обойти 
 (конечно пока не сделает полный рунет в нашей стране, но это невозможно)
 
 # Примечание номер 1: Ubuntu, Debian (моя любимка) и остальные debian-based дистрибутивы
@@ -29,13 +30,12 @@ Amneziawg это форк WireGuard, использующий тунельное
 
 Советую для начала присмотреться к это странице https://github.com/amnezia-vpn/amneziawg-linux-kernel-module 
 
-После выполнить это в терминале
 ```shell
 sudo dnf copr enable amneziavpn/amneziawg
 sudo dnf install amneziawg-dkms amneziawg-tools
 ```
 Я уверен что способ с командами выше работает в Fedora, но не уверен что этот способ будет работать с RedHat, Cent0s и OpenSuse, так что 
-для них советую либо искать amneziawg-tools и amneziawg в ваших репозиториях, а после следовать по разделу Общая информация
+для них советую искать amneziawg-tools и amneziawg в ваших репозиториях, а после следовать по разделу Общая информация
 
 # Примечание номер 3: 
 Совсем недавно пересел на NixOs и понял что нашел свой дистрибутив, поэтому это примечание станет способом для обхода на NixOs
@@ -56,7 +56,9 @@ sudo dnf install amneziawg-dkms amneziawg-tools
 
 Затем в конфигурации добавляем эту богостроку 
 
+ ```shell
 boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ; 
+ ```
 
 (Более подробно можете рассмотреть в моей конфигурации NixOs, которая есть в профиле)
 
@@ -68,6 +70,7 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 (Примечание проверенно лично мною на таких дистрибутивах как arch, void, artix, devuan) 
 
 Основа заключается в собрке модуля ядра по этой ссылке (https://github.com/amnezia-vpn/amneziawg-linux-kernel-module) 
+Так же не забудь собрать amneziawg-tools по этой ссылке (https://github.com/amnezia-vpn/amneziawg-tools) 
 
 Основные шаги: 
 
