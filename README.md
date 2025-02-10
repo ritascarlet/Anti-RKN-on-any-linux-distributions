@@ -142,7 +142,6 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 
 После делаем WARP.conf и добавляем его как новый туннель
 
-ы
 # Примечание номер 6:
 
 https://youtu.be/8CwB4T1nkaM?t=2657
