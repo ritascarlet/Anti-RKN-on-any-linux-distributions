@@ -129,8 +129,15 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
     sudo awg-quick up WARP (для включения сервиса, где WARP это WARP.conf)
     sudo awg-quick down WARP (для выключения сервиса) 
 
+#  Примечание номер 5: MacOS
 
-# Примечание номер 5:
+Здесь все максимально легко. 
+[Скачиваем из AppStore эту версию AmneziaWg](https://apps.apple.com/ru/app/amneziawg/id6478942365)
+
+После делаем WARP.conf и добавляем его как новый туннель
+
+ы
+# Примечание номер 6:
 
 https://youtu.be/8CwB4T1nkaM?t=2657
 
