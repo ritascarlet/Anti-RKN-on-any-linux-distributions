@@ -72,6 +72,7 @@ boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ;
 Готово! Теперь осталось лишь создать путь /etc/amnezia/amneziawg, а после копировать туда WARP (ну и само собой sudo awg-quick up WARP)
 
 В unstable репозитории появилось приложение amnezia-vpn, так что можете установить его, а так же добавить в конфигурационный файл 
+(https://github.com/sund3RRR спасибо за упаковку<3)
 
  ```shell
 programs.amnezia-vpn.enable = true; 
